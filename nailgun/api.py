@@ -11,7 +11,7 @@ app = Flask(__name__)
 model = load(os.environ.get('MODEL_PATH', 'model/'))
 
 
-@app.route('/', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def submit():
     # check if the post request has the file part
     if 'image' not in request.files:
